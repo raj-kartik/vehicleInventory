@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Inbox from "./pages/Inbox";
-import Overview from "./pages/Inventory/Overview";
-import ProductSearch from "./pages/Inventory/ProductSearch";
-import NewProduct from "./pages/Inventory/AllProduct/NewProduct";
 import ExistingProduct from "./pages/Inventory/AllProduct/ExistingProduct";
 import Dashboard from "./pages/Dashboard";
 
 import "./App.css"; 
 import Header from "./components/Header";
+import Overview from "./pages/Inventory/Overview";
+import ProductSearch from "./pages/Inventory/ProductSearch";
+import NewProduct from "./pages/Inventory/NewProduct";
 
 const App = () => {
   return (
