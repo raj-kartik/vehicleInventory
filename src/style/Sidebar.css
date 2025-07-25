@@ -1,0 +1,175 @@
+/* Sidebar container */
+.sidebar {
+  background: #101327;
+  color: #fff;
+  width: 270px;
+  min-height: 100vh;
+  padding-top: 22px;
+  padding-bottom: 28px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 16px #00000011;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+/* Hide scrollbar but allow scroll */
+.sidebar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+/* Sidebar item */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px 18px 12px 30px;
+  font-size: 1rem;
+  color: #eee;
+  border-radius: 7px;
+  margin: 2px 8px;
+  transition: background 0.17s, color 0.18s;
+  gap: 1.11em;
+  position: relative;
+  min-height: 44px;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Icon inside sidebar item */
+.sidebar-item .icon {
+  font-size: 1.22em;
+  display: flex;
+  align-items: center;
+  width: 1.8em;
+  color: #babbde;
+}
+
+/* Title inside sidebar item */
+.sidebar-item .title {
+  flex-grow: 1;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* Arrow icon for expandable menu */
+.sidebar-item .arrow {
+  margin-left: 0.5em;
+  font-size: 0.97em;
+  color: #ada9cf;
+  display: flex;
+  align-items: center;
+}
+
+/* Active sidebar item - background highlight */
+.sidebar-item.active, 
+.sidebar-item:active, 
+.sidebar-item:focus {
+  background: linear-gradient(90deg, #5e84ed 0 80%, #4d71cf 100%);
+  color: #fff;
+  font-weight: 600;
+  /* Add slight rounding for highlight */
+  border-radius: 9px;
+}
+
+/* On active, icons and titles remain white for contrast */
+.sidebar-item.active .icon,
+.sidebar-item.active .title,
+.sidebar-item.active .arrow {
+  color: #fff;
+}
+
+/* Hover effect */
+.sidebar-item:hover {
+  background: #1f1e31;
+  color: #fff;
+}
+
+/* Sub-items container (child menu) */
+.sub-items {
+  border-left: 2px solid #7c82b8; /* Light bluish line for submenu */
+  margin-left: 23px;
+  padding-left: 6px;
+  margin-top: 2px;
+}
+
+/* Reset sub-items container styles when nested inside sidebar-item */
+.sidebar-item .sub-items {
+  background: none;
+  border: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Submenu items (level 1+) */
+.sidebar-item + .sub-items .sidebar-item {
+  background: transparent;
+  border-radius: 6px;
+  color: #cad5de;
+  font-size: 0.98em;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+/* Increase left padding for nested submenu items */
+.sub-items .sidebar-item {
+  margin: 2px 8px;
+  padding-left: 44px !important;
+}
+
+.sub-items .sidebar-item .icon {
+  font-size: 1em;
+}
+
+/* Sub-submenu (level 2+) */
+.sub-items .sub-items .sidebar-item {
+  background: transparent;
+  color: #b1b7c5;
+  font-size: 0.96em;
+  padding-left: 70px !important;
+}
+
+/* Sidebar logo or header style (optional) */
+.sidebar-logo {
+  font-family: 'Segoe Script', cursive;
+  font-size: 1.22em;
+  margin: 0 0 19px 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  letter-spacing: 0.09em;
+  text-shadow: 0 1px 6px #16193233;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .sidebar {
+    width: 90vw;
+    min-width: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 18px;
+    padding-top: 12px;
+    font-size: 0.98em;
+  }
+  .sidebar-logo {
+    padding-left: 13px;
+    font-size: 1.05em;
+  }
+  .sidebar-item {
+    font-size: 0.985em;
+    padding: 10px 9px 10px 19px;
+  }
+  .sub-items .sidebar-item {
+    font-size: 0.95em;
+    padding-left: 35px !important;
+  }
+  .sub-items .sub-items .sidebar-item {
+    padding-left: 54px !important;
+  }
+}
