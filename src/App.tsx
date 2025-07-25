@@ -7,7 +7,7 @@ import NewProduct from "./pages/Inventory/AllProduct/NewProduct";
 import ExistingProduct from "./pages/Inventory/AllProduct/ExistingProduct";
 import Dashboard from "./pages/Dashboard";
 
-import "./App.css"; // 👈 Import the custom CSS
+import "./App.css"; 
 import Header from "./components/Header";
 
 const App = () => {
